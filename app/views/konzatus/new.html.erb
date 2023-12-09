@@ -1,0 +1,933 @@
+<div class="konzatu_form">
+    <% if @gakusyoku=="htamasougou" %>
+        <div class="gakusyokuformmf">
+            <%= form_for @konzatu do |f| %>
+                <div class="gakusyokuformmmf">
+                    <%= f.hidden_field :gakusyoku, :value =>"htamasougou", class:"mounetai" %>
+                    <div class="post_formp">
+                        <%= f.hidden_field :komi, value: 0 %>
+                        <%= f.radio_button :komi, 25 ,id: 'star1'%>
+                        <label for="star1"><span class="text">25分以上</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 20 ,id: 'star2'%>
+                        <label for="star2"><span class="text">20分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 15 ,id: 'star3'%>
+                        <label for="star3"><span class="text">15分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 10 ,id: 'star4'%>
+                        <label for="star4"><span class="text">10分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 5 ,id: 'star5'%>
+                        <label for="star5"><span class="text">5分</span><i class="fa-solid fa-person"></i></label>
+                        <br>
+                    </div>
+                    <br>
+                    <h3>待ち時間がほぼない時は何も押さずに送信してください！</h3>
+                    <br>  
+                    <%= f.submit "送信", class:"mounetai" %>
+                </div>
+            <% end %>
+        </div>
+    <% elsif @gakusyoku=="htamaegg" %>
+        <div class="gakusyokuformmf">
+            <%= form_for @konzatu do |f| %>
+                <div class="gakusyokuformmmf">
+                    <%= f.hidden_field :gakusyoku, :value =>"htamaegg", class:"mounetai" %>
+                    <div class="post_formp">
+                        <%= f.hidden_field :komi, value: 0 %>
+                        <%= f.radio_button :komi, 25 ,id: 'star1'%>
+                        <label for="star1"><span class="text">25分以上</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 20 ,id: 'star2'%>
+                        <label for="star2"><span class="text">20分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 15 ,id: 'star3'%>
+                        <label for="star3"><span class="text">15分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 10 ,id: 'star4'%>
+                        <label for="star4"><span class="text">10分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 5 ,id: 'star5'%>
+                        <label for="star5"><span class="text">5分</span><i class="fa-solid fa-person"></i></label>
+                        <br>
+                    </div>
+                    <br>
+                    <h3>待ち時間がほぼない時は何も押さずに送信してください！</h3>
+                    <br>  
+                    <%= f.submit "送信", class:"mounetai" %>
+                </div>
+            <% end %>
+        </div>
+    <% elsif @gakusyoku=="htamasyagaku" %>
+        <div class="gakusyokuformmf">
+            <%= form_for @konzatu do |f| %>
+                <div class="gakusyokuformmmf">
+                    <%= f.hidden_field :gakusyoku, :value =>"htamasyagaku", class:"mounetai" %>
+                    <div class="post_formp">
+                        <%= f.hidden_field :komi, value: 0 %>
+                        <%= f.radio_button :komi, 25 ,id: 'star1'%>
+                        <label for="star1"><span class="text">25分以上</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 20 ,id: 'star2'%>
+                        <label for="star2"><span class="text">20分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 15 ,id: 'star3'%>
+                        <label for="star3"><span class="text">15分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 10 ,id: 'star4'%>
+                        <label for="star4"><span class="text">10分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 5 ,id: 'star5'%>
+                        <label for="star5"><span class="text">5分</span><i class="fa-solid fa-person"></i></label>
+                        <br>
+                    </div>
+                    <br>
+                    <h3>待ち時間がほぼない時は何も押さずに送信してください！</h3>
+                    <br>  
+                    <%= f.submit "送信", class:"mounetai" %>
+                </div>
+            <% end %>
+        </div>
+    <% elsif @gakusyoku=="htamakeizai" %>
+        <div class="gakusyokuformmf">
+            <%= form_for @konzatu do |f| %>
+                <div class="gakusyokuformmmf">
+                    <%= f.hidden_field :gakusyoku, :value =>"htamakeizai", class:"mounetai" %>
+                    <div class="post_formp">
+                        <%= f.hidden_field :komi, value: 0 %>
+                        <%= f.radio_button :komi, 25 ,id: 'star1'%>
+                        <label for="star1"><span class="text">25分以上</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 20 ,id: 'star2'%>
+                        <label for="star2"><span class="text">20分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 15 ,id: 'star3'%>
+                        <label for="star3"><span class="text">15分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 10 ,id: 'star4'%>
+                        <label for="star4"><span class="text">10分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 5 ,id: 'star5'%>
+                        <label for="star5"><span class="text">5分</span><i class="fa-solid fa-person"></i></label>
+                        <br>
+                    </div>
+                    <br>
+                    <h3>待ち時間がほぼない時は何も押さずに送信してください！</h3>
+                    <br>  
+                    <%= f.submit "送信", class:"mounetai" %>
+                </div>
+            <% end %>
+        </div>
+    <% elsif @gakusyoku=="htamagennfuku" %>
+        <div class="gakusyokuformmf">
+            <%= form_for @konzatu do |f| %>
+                <div class="gakusyokuformmmf">
+                    <%= f.hidden_field :gakusyoku, :value =>"htamagennfuku", class:"mounetai" %>
+                    <div class="post_formp">
+                        <%= f.hidden_field :komi, value: 0 %>
+                        <%= f.radio_button :komi, 25 ,id: 'star1'%>
+                        <label for="star1"><span class="text">25分以上</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 20 ,id: 'star2'%>
+                        <label for="star2"><span class="text">20分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 15 ,id: 'star3'%>
+                        <label for="star3"><span class="text">15分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 10 ,id: 'star4'%>
+                        <label for="star4"><span class="text">10分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 5 ,id: 'star5'%>
+                        <label for="star5"><span class="text">5分</span><i class="fa-solid fa-person"></i></label>
+                        <br>
+                    </div>
+                    <br>
+                    <h3>待ち時間がほぼない時は何も押さずに送信してください！</h3>
+                    <br>  
+                    <%= f.submit "送信", class:"mounetai" %>
+                </div>
+            <% end %>
+        </div>
+    <% elsif @gakusyoku=="htamasupoken" %>
+        <div class="gakusyokuformmf">
+            <%= form_for @konzatu do |f| %>
+                <div class="gakusyokuformmmf">
+                    <%= f.hidden_field :gakusyoku, :value =>"htamasupoken", class:"mounetai" %>
+                    <div class="post_formp">
+                        <%= f.hidden_field :komi, value: 0 %>
+                        <%= f.radio_button :komi, 25 ,id: 'star1'%>
+                        <label for="star1"><span class="text">25分以上</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 20 ,id: 'star2'%>
+                        <label for="star2"><span class="text">20分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 15 ,id: 'star3'%>
+                        <label for="star3"><span class="text">15分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 10 ,id: 'star4'%>
+                        <label for="star4"><span class="text">10分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 5 ,id: 'star5'%>
+                        <label for="star5"><span class="text">5分</span><i class="fa-solid fa-person"></i></label>
+                        <br>
+                    </div>
+                    <br>
+                    <h3>待ち時間がほぼない時は何も押さずに送信してください！</h3>
+                    <br>  
+                    <%= f.submit "送信", class:"mounetai" %>
+                </div>
+            <% end %>
+        </div>
+    <% elsif @gakusyoku=="hitigayatudohi" %>
+        <div class="gakusyokuformmf">
+            <%= form_for @konzatu do |f| %>
+                <div class="gakusyokuformmmf">
+                    <%= f.hidden_field :gakusyoku, :value =>"hitigayatudohi", class:"mounetai" %>
+                    <div class="post_formp">
+                        <%= f.hidden_field :komi, value: 0 %>
+                        <%= f.radio_button :komi, 25 ,id: 'star1'%>
+                        <label for="star1"><span class="text">25分以上</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 20 ,id: 'star2'%>
+                        <label for="star2"><span class="text">20分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 15 ,id: 'star3'%>
+                        <label for="star3"><span class="text">15分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 10 ,id: 'star4'%>
+                        <label for="star4"><span class="text">10分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 5 ,id: 'star5'%>
+                        <label for="star5"><span class="text">5分</span><i class="fa-solid fa-person"></i></label>
+                        <br>
+                    </div>
+                    <br>
+                    <h3>待ち時間がほぼない時は何も押さずに送信してください！</h3>
+                    <br>  
+                    <%= f.submit "送信", class:"mounetai" %>
+                </div>
+            <% end %>
+        </div>
+    <% elsif @gakusyoku=="hitigayaforest" %>
+        <div class="gakusyokuformmf">
+            <%= form_for @konzatu do |f| %>
+                <div class="gakusyokuformmmf">
+                    <%= f.hidden_field :gakusyoku, :value =>"hitigayaforest", class:"mounetai" %>
+                    <div class="post_formp">
+                        <%= f.hidden_field :komi, value: 0 %>
+                        <%= f.radio_button :komi, 25 ,id: 'star1'%>
+                        <label for="star1"><span class="text">25分以上</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 20 ,id: 'star2'%>
+                        <label for="star2"><span class="text">20分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 15 ,id: 'star3'%>
+                        <label for="star3"><span class="text">15分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 10 ,id: 'star4'%>
+                        <label for="star4"><span class="text">10分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 5 ,id: 'star5'%>
+                        <label for="star5"><span class="text">5分</span><i class="fa-solid fa-person"></i></label>
+                        <br>
+                    </div>
+                    <br>
+                    <h3>待ち時間がほぼない時は何も押さずに送信してください！</h3>
+                    <br>  
+                    <%= f.submit "送信", class:"mounetai" %>
+                </div>
+            <% end %>
+        </div>
+    <% elsif @gakusyoku=="hitigayafujimi" %>
+        <div class="gakusyokuformmf">
+            <%= form_for @konzatu do |f| %>
+                <div class="gakusyokuformmmf">
+                    <%= f.hidden_field :gakusyoku, :value =>"hitigayafujimi", class:"mounetai" %>
+                    <div class="post_formp">
+                        <%= f.hidden_field :komi, value: 0 %>
+                        <%= f.radio_button :komi, 25 ,id: 'star1'%>
+                        <label for="star1"><span class="text">25分以上</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 20 ,id: 'star2'%>
+                        <label for="star2"><span class="text">20分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 15 ,id: 'star3'%>
+                        <label for="star3"><span class="text">15分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 10 ,id: 'star4'%>
+                        <label for="star4"><span class="text">10分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 5 ,id: 'star5'%>
+                        <label for="star5"><span class="text">5分</span><i class="fa-solid fa-person"></i></label>
+                        <br>
+                    </div>
+                    <br>
+                    <h3>待ち時間がほぼない時は何も押さずに送信してください！</h3>
+                    <br>  
+                    <%= f.submit "送信", class:"mounetai" %>
+                </div>
+            <% end %>
+        </div>
+    <% elsif @gakusyoku=="hitigayastafu" %>
+        <div class="gakusyokuformmf">
+            <%= form_for @konzatu do |f| %>
+                <div class="gakusyokuformmmf">
+                    <%= f.hidden_field :gakusyoku, :value =>"hitigayastafu", class:"mounetai" %>
+                    <div class="post_formp">
+                        <%= f.hidden_field :komi, value: 0 %>
+                        <%= f.radio_button :komi, 25 ,id: 'star1'%>
+                        <label for="star1"><span class="text">25分以上</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 20 ,id: 'star2'%>
+                        <label for="star2"><span class="text">20分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 15 ,id: 'star3'%>
+                        <label for="star3"><span class="text">15分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 10 ,id: 'star4'%>
+                        <label for="star4"><span class="text">10分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 5 ,id: 'star5'%>
+                        <label for="star5"><span class="text">5分</span><i class="fa-solid fa-person"></i></label>
+                        <br>
+                    </div>
+                    <br>
+                    <h3>待ち時間がほぼない時は何も押さずに送信してください！</h3>
+                    <br>  
+                    <%= f.submit "送信", class:"mounetai" %>
+                </div>
+            <% end %>
+        </div>
+    <% elsif @gakusyoku=="hitigayatamati" %>
+        <div class="gakusyokuformmf">
+            <%= form_for @konzatu do |f| %>
+                <div class="gakusyokuformmmf">
+                    <%= f.hidden_field :gakusyoku, :value =>"hitigayatamati", class:"mounetai" %>
+                    <div class="post_formp">
+                        <%= f.hidden_field :komi, value: 0 %>
+                        <%= f.radio_button :komi, 25 ,id: 'star1'%>
+                        <label for="star1"><span class="text">25分以上</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 20 ,id: 'star2'%>
+                        <label for="star2"><span class="text">20分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 15 ,id: 'star3'%>
+                        <label for="star3"><span class="text">15分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 10 ,id: 'star4'%>
+                        <label for="star4"><span class="text">10分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 5 ,id: 'star5'%>
+                        <label for="star5"><span class="text">5分</span><i class="fa-solid fa-person"></i></label>
+                        <br>
+                    </div>
+                    <br>
+                    <h3>待ち時間がほぼない時は何も押さずに送信してください！</h3>
+                    <br>  
+                    <%= f.submit "送信", class:"mounetai" %>
+                </div>
+            <% end %>
+        </div>
+    <% elsif @gakusyoku=="wasedaookuma" %>
+        <div class="gakusyokuformmf">
+            <%= form_for @konzatu do |f| %>
+                <div class="gakusyokuformmmf">
+                    <%= f.hidden_field :gakusyoku, :value =>"wasedaookuma", class:"mounetai" %>
+                    <div class="post_formp">
+                        <%= f.hidden_field :komi, value: 0 %>
+                        <%= f.radio_button :komi, 25 ,id: 'star1'%>
+                        <label for="star1"><span class="text">25分以上</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 20 ,id: 'star2'%>
+                        <label for="star2"><span class="text">20分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 15 ,id: 'star3'%>
+                        <label for="star3"><span class="text">15分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 10 ,id: 'star4'%>
+                        <label for="star4"><span class="text">10分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 5 ,id: 'star5'%>
+                        <label for="star5"><span class="text">5分</span><i class="fa-solid fa-person"></i></label>
+                        <br>
+                    </div>
+                    <br>
+                    <h3>待ち時間がほぼない時は何も押さずに送信してください！</h3>
+                    <br>  
+                    <%= f.submit "送信", class:"mounetai" %>
+                </div>
+            <% end %>
+        </div>
+    <% elsif @gakusyoku=="wasedagroundzaka" %>
+        <div class="gakusyokuformmf">
+            <%= form_for @konzatu do |f| %>
+                <div class="gakusyokuformmmf">
+                    <%= f.hidden_field :gakusyoku, :value =>"wasedagroundzaka", class:"mounetai" %>
+                    <div class="post_formp">
+                        <%= f.hidden_field :komi, value: 0 %>
+                        <%= f.radio_button :komi, 25 ,id: 'star1'%>
+                        <label for="star1"><span class="text">25分以上</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 20 ,id: 'star2'%>
+                        <label for="star2"><span class="text">20分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 15 ,id: 'star3'%>
+                        <label for="star3"><span class="text">15分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 10 ,id: 'star4'%>
+                        <label for="star4"><span class="text">10分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 5 ,id: 'star5'%>
+                        <label for="star5"><span class="text">5分</span><i class="fa-solid fa-person"></i></label>
+                        <br>
+                    </div>
+                    <br>
+                    <h3>待ち時間がほぼない時は何も押さずに送信してください！</h3>
+                    <br>  
+                    <%= f.submit "送信", class:"mounetai" %>
+                </div>
+            <% end %>
+        </div>
+    <% elsif @gakusyoku=="msurugasky" %>
+        <div class="gakusyokuformmf">
+            <%= form_for @konzatu do |f| %>
+                <div class="gakusyokuformmmf">
+                    <%= f.hidden_field :gakusyoku, :value =>"msurugasky", class:"mounetai" %>
+                    <div class="post_formp">
+                        <%= f.hidden_field :komi, value: 0 %>
+                        <%= f.radio_button :komi, 25 ,id: 'star1'%>
+                        <label for="star1"><span class="text">25分以上</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 20 ,id: 'star2'%>
+                        <label for="star2"><span class="text">20分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 15 ,id: 'star3'%>
+                        <label for="star3"><span class="text">15分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 10 ,id: 'star4'%>
+                        <label for="star4"><span class="text">10分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 5 ,id: 'star5'%>
+                        <label for="star5"><span class="text">5分</span><i class="fa-solid fa-person"></i></label>
+                        <br>
+                    </div>
+                    <br>
+                    <h3>待ち時間がほぼない時は何も押さずに送信してください！</h3>
+                    <br>  
+                    <%= f.submit "送信", class:"mounetai" %>
+                </div>
+            <% end %>
+        </div>
+    <% elsif @gakusyoku=="msurugacafe" %>
+        <div class="gakusyokuformmf">
+            <%= form_for @konzatu do |f| %>
+                <div class="gakusyokuformmmf">
+                    <%= f.hidden_field :gakusyoku, :value =>"msurugacafe", class:"mounetai" %>
+                    <div class="post_formp">
+                        <%= f.hidden_field :komi, value: 0 %>
+                        <%= f.radio_button :komi, 25 ,id: 'star1'%>
+                        <label for="star1"><span class="text">25分以上</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 20 ,id: 'star2'%>
+                        <label for="star2"><span class="text">20分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 15 ,id: 'star3'%>
+                        <label for="star3"><span class="text">15分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 10 ,id: 'star4'%>
+                        <label for="star4"><span class="text">10分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 5 ,id: 'star5'%>
+                        <label for="star5"><span class="text">5分</span><i class="fa-solid fa-person"></i></label>
+                        <br>
+                    </div>
+                    <br>
+                    <h3>待ち時間がほぼない時は何も押さずに送信してください！</h3>
+                    <br>  
+                    <%= f.submit "送信", class:"mounetai" %>
+                </div>
+            <% end %>
+        </div>
+    <% elsif @gakusyoku=="msurugasan" %>
+        <div class="gakusyokuformmf">
+            <%= form_for @konzatu do |f| %>
+                <div class="gakusyokuformmmf">
+                    <%= f.hidden_field :gakusyoku, :value =>"msurugasan", class:"mounetai" %>
+                    <div class="post_formp">
+                        <%= f.hidden_field :komi, value: 0 %>
+                        <%= f.radio_button :komi, 25 ,id: 'star1'%>
+                        <label for="star1"><span class="text">25分以上</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 20 ,id: 'star2'%>
+                        <label for="star2"><span class="text">20分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 15 ,id: 'star3'%>
+                        <label for="star3"><span class="text">15分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 10 ,id: 'star4'%>
+                        <label for="star4"><span class="text">10分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 5 ,id: 'star5'%>
+                        <label for="star5"><span class="text">5分</span><i class="fa-solid fa-person"></i></label>
+                        <br>
+                    </div>
+                    <br>
+                    <h3>待ち時間がほぼない時は何も押さずに送信してください！</h3>
+                    <br>  
+                    <%= f.submit "送信", class:"mounetai" %>
+                </div>
+            <% end %>
+        </div>
+    <% elsif @gakusyoku=="mizumimori1" %>
+        <div class="gakusyokuformmf">
+            <%= form_for @konzatu do |f| %>
+                <div class="gakusyokuformmmf">
+                    <%= f.hidden_field :gakusyoku, :value =>"mizumimori1", class:"mounetai" %>
+                    <div class="post_formp">
+                        <%= f.hidden_field :komi, value: 0 %>
+                        <%= f.radio_button :komi, 25 ,id: 'star1'%>
+                        <label for="star1"><span class="text">25分以上</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 20 ,id: 'star2'%>
+                        <label for="star2"><span class="text">20分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 15 ,id: 'star3'%>
+                        <label for="star3"><span class="text">15分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 10 ,id: 'star4'%>
+                        <label for="star4"><span class="text">10分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 5 ,id: 'star5'%>
+                        <label for="star5"><span class="text">5分</span><i class="fa-solid fa-person"></i></label>
+                        <br>
+                    </div>
+                    <br>
+                    <h3>待ち時間がほぼない時は何も押さずに送信してください！</h3>
+                    <br>  
+                    <%= f.submit "送信", class:"mounetai" %>
+                </div>
+            <% end %>
+        </div>
+    <% elsif @gakusyoku=="mizumimori2" %>
+        <div class="gakusyokuformmf">
+            <%= form_for @konzatu do |f| %>
+                <div class="gakusyokuformmmf">
+                    <%= f.hidden_field :gakusyoku, :value =>"mizumimori2", class:"mounetai" %>
+                    <div class="post_formp">
+                        <%= f.hidden_field :komi, value: 0 %>
+                        <%= f.radio_button :komi, 25 ,id: 'star1'%>
+                        <label for="star1"><span class="text">25分以上</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 20 ,id: 'star2'%>
+                        <label for="star2"><span class="text">20分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 15 ,id: 'star3'%>
+                        <label for="star3"><span class="text">15分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 10 ,id: 'star4'%>
+                        <label for="star4"><span class="text">10分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 5 ,id: 'star5'%>
+                        <label for="star5"><span class="text">5分</span><i class="fa-solid fa-person"></i></label>
+                        <br>
+                    </div>
+                    <br>
+                    <h3>待ち時間がほぼない時は何も押さずに送信してください！</h3>
+                    <br>  
+                    <%= f.submit "送信", class:"mounetai" %>
+                </div>
+            <% end %>
+        </div>
+    <% elsif @gakusyoku=="mizumimori3" %>
+        <div class="gakusyokuformmf">
+            <%= form_for @konzatu do |f| %>
+                <div class="gakusyokuformmmf">
+                    <%= f.hidden_field :gakusyoku, :value =>"mizumimori3", class:"mounetai" %>
+                    <div class="post_formp">
+                        <%= f.hidden_field :komi, value: 0 %>
+                        <%= f.radio_button :komi, 25 ,id: 'star1'%>
+                        <label for="star1"><span class="text">25分以上</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 20 ,id: 'star2'%>
+                        <label for="star2"><span class="text">20分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 15 ,id: 'star3'%>
+                        <label for="star3"><span class="text">15分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 10 ,id: 'star4'%>
+                        <label for="star4"><span class="text">10分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 5 ,id: 'star5'%>
+                        <label for="star5"><span class="text">5分</span><i class="fa-solid fa-person"></i></label>
+                        <br>
+                    </div>
+                    <br>
+                    <h3>待ち時間がほぼない時は何も押さずに送信してください！</h3>
+                    <br>  
+                    <%= f.submit "送信", class:"mounetai" %>
+                </div>
+            <% end %>
+        </div>
+    <% elsif @gakusyoku=="aoyama7" %>
+        <div class="gakusyokuformmf">
+            <%= form_for @konzatu do |f| %>
+                <div class="gakusyokuformmmf">
+                    <%= f.hidden_field :gakusyoku, :value =>"aoyama7", class:"mounetai" %>
+                    <div class="post_formp">
+                        <%= f.hidden_field :komi, value: 0 %>
+                        <%= f.radio_button :komi, 25 ,id: 'star1'%>
+                        <label for="star1"><span class="text">25分以上</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 20 ,id: 'star2'%>
+                        <label for="star2"><span class="text">20分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 15 ,id: 'star3'%>
+                        <label for="star3"><span class="text">15分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 10 ,id: 'star4'%>
+                        <label for="star4"><span class="text">10分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 5 ,id: 'star5'%>
+                        <label for="star5"><span class="text">5分</span><i class="fa-solid fa-person"></i></label>
+                        <br>
+                    </div>
+                    <br>
+                    <h3>待ち時間がほぼない時は何も押さずに送信してください！</h3>
+                    <br>  
+                    <%= f.submit "送信", class:"mounetai" %>
+                </div>
+            <% end %>
+        </div>
+    <% elsif @gakusyoku=="aoyama17" %>
+        <div class="gakusyokuformmf">
+            <%= form_for @konzatu do |f| %>
+                <div class="gakusyokuformmmf">
+                    <%= f.hidden_field :gakusyoku, :value =>"aoyama17", class:"mounetai" %>
+                    <div class="post_formp">
+                        <%= f.hidden_field :komi, value: 0 %>
+                        <%= f.radio_button :komi, 25 ,id: 'star1'%>
+                        <label for="star1"><span class="text">25分以上</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 20 ,id: 'star2'%>
+                        <label for="star2"><span class="text">20分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 15 ,id: 'star3'%>
+                        <label for="star3"><span class="text">15分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 10 ,id: 'star4'%>
+                        <label for="star4"><span class="text">10分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 5 ,id: 'star5'%>
+                        <label for="star5"><span class="text">5分</span><i class="fa-solid fa-person"></i></label>
+                        <br>
+                    </div>
+                    <br>
+                    <h3>待ち時間がほぼない時は何も押さずに送信してください！</h3>
+                    <br>  
+                    <%= f.submit "送信", class:"mounetai" %>
+                </div>
+            <% end %>
+        </div>
+    <% elsif @gakusyoku=="aoyamacafe" %>
+        <div class="gakusyokuformmf">
+            <%= form_for @konzatu do |f| %>
+                <div class="gakusyokuformmmf">
+                    <%= f.hidden_field :gakusyoku, :value =>"aoyamacafe", class:"mounetai" %>
+                    <div class="post_formp">
+                        <%= f.hidden_field :komi, value: 0 %>
+                        <%= f.radio_button :komi, 25 ,id: 'star1'%>
+                        <label for="star1"><span class="text">25分以上</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 20 ,id: 'star2'%>
+                        <label for="star2"><span class="text">20分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 15 ,id: 'star3'%>
+                        <label for="star3"><span class="text">15分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 10 ,id: 'star4'%>
+                        <label for="star4"><span class="text">10分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 5 ,id: 'star5'%>
+                        <label for="star5"><span class="text">5分</span><i class="fa-solid fa-person"></i></label>
+                        <br>
+                    </div>
+                    <br>
+                    <h3>待ち時間がほぼない時は何も押さずに送信してください！</h3>
+                    <br>  
+                    <%= f.submit "送信", class:"mounetai" %>
+                </div>
+            <% end %>
+        </div>
+    <% elsif @gakusyoku=="rike1" %>
+        <div class="gakusyokuformmf">
+            <%= form_for @konzatu do |f| %>
+                <div class="gakusyokuformmmf">
+                    <%= f.hidden_field :gakusyoku, :value =>"rike1", class:"mounetai" %>
+                    <div class="post_formp">
+                        <%= f.hidden_field :komi, value: 0 %>
+                        <%= f.radio_button :komi, 25 ,id: 'star1'%>
+                        <label for="star1"><span class="text">25分以上</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 20 ,id: 'star2'%>
+                        <label for="star2"><span class="text">20分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 15 ,id: 'star3'%>
+                        <label for="star3"><span class="text">15分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 10 ,id: 'star4'%>
+                        <label for="star4"><span class="text">10分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 5 ,id: 'star5'%>
+                        <label for="star5"><span class="text">5分</span><i class="fa-solid fa-person"></i></label>
+                        <br>
+                    </div>
+                    <br>
+                    <h3>待ち時間がほぼない時は何も押さずに送信してください！</h3>
+                    <br>  
+                    <%= f.submit "送信", class:"mounetai" %>
+                </div>
+            <% end %>
+        </div>
+    <% elsif @gakusyoku=="rikeaibi" %>
+        <div class="gakusyokuformmf">
+            <%= form_for @konzatu do |f| %>
+                <div class="gakusyokuformmmf">
+                    <%= f.hidden_field :gakusyoku, :value =>"rikeaibi", class:"mounetai" %>
+                    <div class="post_formp">
+                        <%= f.hidden_field :komi, value: 0 %>
+                        <%= f.radio_button :komi, 25 ,id: 'star1'%>
+                        <label for="star1"><span class="text">25分以上</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 20 ,id: 'star2'%>
+                        <label for="star2"><span class="text">20分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 15 ,id: 'star3'%>
+                        <label for="star3"><span class="text">15分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 10 ,id: 'star4'%>
+                        <label for="star4"><span class="text">10分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 5 ,id: 'star5'%>
+                        <label for="star5"><span class="text">5分</span><i class="fa-solid fa-person"></i></label>
+                        <br>
+                    </div>
+                    <br>
+                    <h3>待ち時間がほぼない時は何も押さずに送信してください！</h3>
+                    <br>  
+                    <%= f.submit "送信", class:"mounetai" %>
+                </div>
+            <% end %>
+        </div>
+    <% elsif @gakusyoku=="riketullys" %>
+        <div class="gakusyokuformmf">
+            <%= form_for @konzatu do |f| %>
+                <div class="gakusyokuformmmf">
+                    <%= f.hidden_field :gakusyoku, :value =>"riketullys", class:"mounetai" %>
+                    <div class="post_formp">
+                        <%= f.hidden_field :komi, value: 0 %>
+                        <%= f.radio_button :komi, 25 ,id: 'star1'%>
+                        <label for="star1"><span class="text">25分以上</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 20 ,id: 'star2'%>
+                        <label for="star2"><span class="text">20分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 15 ,id: 'star3'%>
+                        <label for="star3"><span class="text">15分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 10 ,id: 'star4'%>
+                        <label for="star4"><span class="text">10分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 5 ,id: 'star5'%>
+                        <label for="star5"><span class="text">5分</span><i class="fa-solid fa-person"></i></label>
+                        <br>
+                    </div>
+                    <br>
+                    <h3>待ち時間がほぼない時は何も押さずに送信してください！</h3>
+                    <br>  
+                    <%= f.submit "送信", class:"mounetai" %>
+                </div>
+            <% end %>
+        </div>
+    <% elsif @gakusyoku=="rikehararu" %>
+        <div class="gakusyokuformmf">
+            <%= form_for @konzatu do |f| %>
+                <div class="gakusyokuformmmf">
+                    <%= f.hidden_field :gakusyoku, :value =>"rikehararu", class:"mounetai" %>
+                    <div class="post_formp">
+                        <%= f.hidden_field :komi, value: 0 %>
+                        <%= f.radio_button :komi, 25 ,id: 'star1'%>
+                        <label for="star1"><span class="text">25分以上</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 20 ,id: 'star2'%>
+                        <label for="star2"><span class="text">20分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 15 ,id: 'star3'%>
+                        <label for="star3"><span class="text">15分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 10 ,id: 'star4'%>
+                        <label for="star4"><span class="text">10分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 5 ,id: 'star5'%>
+                        <label for="star5"><span class="text">5分</span><i class="fa-solid fa-person"></i></label>
+                        <br>
+                    </div>
+                    <br>
+                    <h3>待ち時間がほぼない時は何も押さずに送信してください！</h3>
+                    <br>  
+                    <%= f.submit "送信", class:"mounetai" %>
+                </div>
+            <% end %>
+        </div>
+    <% elsif @gakusyoku=="rike9" %>
+        <div class="gakusyokuformmf">
+            <%= form_for @konzatu do |f| %>
+                <div class="gakusyokuformmmf">
+                    <%= f.hidden_field :gakusyoku, :value =>"rike9", class:"mounetai" %>
+                    <div class="post_formp">
+                        <%= f.hidden_field :komi, value: 0 %>
+                        <%= f.radio_button :komi, 25 ,id: 'star1'%>
+                        <label for="star1"><span class="text">25分以上</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 20 ,id: 'star2'%>
+                        <label for="star2"><span class="text">20分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 15 ,id: 'star3'%>
+                        <label for="star3"><span class="text">15分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 10 ,id: 'star4'%>
+                        <label for="star4"><span class="text">10分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 5 ,id: 'star5'%>
+                        <label for="star5"><span class="text">5分</span><i class="fa-solid fa-person"></i></label>
+                        <br>
+                    </div>
+                    <br>
+                    <h3>待ち時間がほぼない時は何も押さずに送信してください！</h3>
+                    <br>  
+                    <%= f.submit "送信", class:"mounetai" %>
+                </div>
+            <% end %>
+        </div>
+    <% elsif @gakusyoku=="rikehibiya" %>
+        <div class="gakusyokuformmf">
+            <%= form_for @konzatu do |f| %>
+                <div class="gakusyokuformmmf">
+                    <%= f.hidden_field :gakusyoku, :value =>"rikehibiya", class:"mounetai" %>
+                    <div class="post_formp">
+                        <%= f.hidden_field :komi, value: 0 %>
+                        <%= f.radio_button :komi, 25 ,id: 'star1'%>
+                        <label for="star1"><span class="text">25分以上</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 20 ,id: 'star2'%>
+                        <label for="star2"><span class="text">20分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 15 ,id: 'star3'%>
+                        <label for="star3"><span class="text">15分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 10 ,id: 'star4'%>
+                        <label for="star4"><span class="text">10分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 5 ,id: 'star5'%>
+                        <label for="star5"><span class="text">5分</span><i class="fa-solid fa-person"></i></label>
+                        <br>
+                    </div>
+                    <br>
+                    <h3>待ち時間がほぼない時は何も押さずに送信してください！</h3>
+                    <br>  
+                    <%= f.submit "送信", class:"mounetai" %>
+                </div>
+            <% end %>
+        </div>
+    <% elsif @gakusyoku=="rniizaforest" %>
+        <div class="gakusyokuformmf">
+            <%= form_for @konzatu do |f| %>
+                <div class="gakusyokuformmmf">
+                    <%= f.hidden_field :gakusyoku, :value =>"rniizaforest", class:"mounetai" %>
+                    <div class="post_formp">
+                        <%= f.hidden_field :komi, value: 0 %>
+                        <%= f.radio_button :komi, 25 ,id: 'star1'%>
+                        <label for="star1"><span class="text">25分以上</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 20 ,id: 'star2'%>
+                        <label for="star2"><span class="text">20分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 15 ,id: 'star3'%>
+                        <label for="star3"><span class="text">15分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 10 ,id: 'star4'%>
+                        <label for="star4"><span class="text">10分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 5 ,id: 'star5'%>
+                        <label for="star5"><span class="text">5分</span><i class="fa-solid fa-person"></i></label>
+                        <br>
+                    </div>
+                    <br>
+                    <h3>待ち時間がほぼない時は何も押さずに送信してください！</h3>
+                    <br>  
+                    <%= f.submit "送信", class:"mounetai" %>
+                </div>
+            <% end %>
+        </div>
+    <% elsif @gakusyoku=="rniizakokage" %>
+        <div class="gakusyokuformmf">
+            <%= form_for @konzatu do |f| %>
+                <div class="gakusyokuformmmf">
+                    <%= f.hidden_field :gakusyoku, :value =>"rniizakokage", class:"mounetai" %>
+                    <div class="post_formp">
+                        <%= f.hidden_field :komi, value: 0 %>
+                        <%= f.radio_button :komi, 25 ,id: 'star1'%>
+                        <label for="star1"><span class="text">25分以上</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 20 ,id: 'star2'%>
+                        <label for="star2"><span class="text">20分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 15 ,id: 'star3'%>
+                        <label for="star3"><span class="text">15分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 10 ,id: 'star4'%>
+                        <label for="star4"><span class="text">10分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 5 ,id: 'star5'%>
+                        <label for="star5"><span class="text">5分</span><i class="fa-solid fa-person"></i></label>
+                        <br>
+                    </div>
+                    <br>
+                    <h3>待ち時間がほぼない時は何も押さずに送信してください！</h3>
+                    <br>  
+                    <%= f.submit "送信", class:"mounetai" %>
+                </div>
+            <% end %>
+        </div>
+    <% elsif @gakusyoku=="rniizahararu" %>
+        <div class="gakusyokuformmf">
+            <%= form_for @konzatu do |f| %>
+                <div class="gakusyokuformmmf">
+                    <%= f.hidden_field :gakusyoku, :value =>"rniizahararu", class:"mounetai" %>
+                    <div class="post_formp">
+                        <%= f.hidden_field :komi, value: 0 %>
+                        <%= f.radio_button :komi, 25 ,id: 'star1'%>
+                        <label for="star1"><span class="text">25分以上</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 20 ,id: 'star2'%>
+                        <label for="star2"><span class="text">20分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 15 ,id: 'star3'%>
+                        <label for="star3"><span class="text">15分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 10 ,id: 'star4'%>
+                        <label for="star4"><span class="text">10分</span><i class="fa-solid fa-person"></i></label>
+                    
+                        <%= f.radio_button :komi, 5 ,id: 'star5'%>
+                        <label for="star5"><span class="text">5分</span><i class="fa-solid fa-person"></i></label>
+                        <br>
+                    </div>
+                    <br>
+                    <h3>待ち時間がほぼない時は何も押さずに送信してください！</h3>
+                    <br>  
+                    <%= f.submit "送信", class:"mounetai" %>
+                </div>
+            <% end %>
+        </div>
+    <% end %>
+</div>

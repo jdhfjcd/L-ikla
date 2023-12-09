@@ -1,0 +1,516 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.tastas{
+  display: flex;
+  width: 100%;
+}
+
+#new-img{
+  width: 400px;
+  object-fit: cover;
+}
+.posts-container{
+  text-align: center;
+  margin: 0 auto;
+}
+.post{
+  width: 400px;
+  border: solid 1px #c9c9c9;
+  background-color: #FFFF;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  box-sizing: content-box;
+  font-family: 'Darumadrop One', cursive;
+  font-family: 'Dela Gothic One', cursive;
+  font-family: 'Mochiy Pop One', sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+.field-search{
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid #c9c9c9;
+  padding: 3px 10px;
+  border-radius: 20px;
+  height: 2.3em;
+  width: 300px;
+  overflow: hidden;
+  background-color: #fff;
+  font-family: 'Darumadrop One', cursive;
+  font-family: 'Dela Gothic One', cursive;
+  font-family: 'Mochiy Pop One', sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+.field-search input[type="text"]{
+  border: none;
+  height: 2.0em;
+  width: 100%;
+  vertical-align: middle;
+  font-family: 'Darumadrop One', cursive;
+  font-family: 'Dela Gothic One', cursive;
+  font-family: 'Mochiy Pop One', sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+.field-search input[type="text"]:focus {
+  outline: 0;
+}
+.field-search input[type="submit"]{
+  cursor: pointer;
+  font-family: FontAwesome;
+  border: none;
+  background: #f16767;
+  color: #fff;
+  position: absolute;
+  width: 3.5em;
+  height: 3.0em;
+  right:0px;
+  top: -3px;
+  outline : none;
+  font-family: 'Darumadrop One', cursive;
+  font-family: 'Dela Gothic One', cursive;
+  font-family: 'Mochiy Pop One', sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+.ue{
+  display: flex;
+}
+.user{
+  left: 0;
+  width: 50px;
+  height: 45px;
+  margin: 5px 0px 0px 0px;
+}
+.username{
+  left: 0;
+  margin: 13px 0px 0px 5px;
+  white-space: nowrap;
+}
+.username a{
+  text-decoration: none;
+  color: #000000;
+}
+.follow{
+  align-items: right;
+  display: flex;
+  color: #f16767;
+  text-decoration: none;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-left: 200px;
+}
+
+.follow i{
+  font-size: 30px;
+}
+
+.syasin{
+  margin: 0px 0px 0px 0px;
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+}
+.box1 {
+  width: 400px;
+  height: 400px;
+}
+.omuomu{
+  margin: 0 auto;
+  text-align: center;
+}
+.shoooop{
+  margin-top: 8px;
+}
+.univ{
+  margin-top: 6px;
+  margin-bottom: 8px;
+}
+.aboout{
+  margin-bottom: 8px;
+}
+.iinehens{
+  display: flex;
+}
+.iine{
+  margin-top: 7px;
+  left: 10%;
+}
+.iine i{
+  font-size: 30px;
+  text-decoration: none;
+  color: #000000;
+}
+.iiiine{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+  font-size: 30px;
+}
+.iiiine i{
+  color: #f16767;
+}
+.iiiiine{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+  font-size: 30px;
+}
+.komennt{
+  font-size: 27px;
+}
+.komennt i{
+  color: #000000;
+}
+.btn--orange,
+a.btn--orange {
+  color: #000000;
+  background-color: #f1676700;
+  border: none;
+}
+.btn--orange:hover,
+a.btn--orange:hover {
+  color: #f16767;
+  background: #f5660000;
+}
+
+.btn,
+a.btn,
+button.btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #000000;
+  border-radius: 0.5rem;
+}
+
+a.btn-power {
+  font-size: 50px;
+
+  display: grid;
+
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  padding: 0;
+
+  text-align: center;
+  letter-spacing: 0;
+
+  color: #c9b1b1;
+  border-radius: 50%;
+  border: solid 1px;
+  border-color: #44444410;
+  background: #fdfdfd;
+  -webkit-box-shadow: 0 8px 0 #c9b1b1;
+  box-shadow: 0 8px 0 #c9b1b1;
+
+  justify-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+
+  position: fixed;
+  right: 13%;
+  bottom: 15%;
+}
+
+a.btn-power:hover {
+  -webkit-transform: translate(0, 3px);
+  transform: translate(0, 3px);
+
+  color: #f16767;
+  -webkit-box-shadow: 0 5px 0 #c9b1b1;
+  box-shadow: 0 5px 0 #c9b1b1;
+}
+
+/* btn-power-real
+===========*/
+a.btn-power-real {
+  font-size: 50px;
+
+  display: grid;
+
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  padding: 0;
+
+  text-align: center;
+  letter-spacing: 0;
+
+  color: #4d4d4d;
+  border-radius: 50%;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(white),
+    color-stop(36%, #bcbbbe),
+    color-stop(50%, #9b9b9b),
+    color-stop(64%, #bdbcbf),
+    to(white)
+  );
+  background-image: -webkit-linear-gradient(
+    top,
+    white 0%,
+    #bcbbbe 36%,
+    #9b9b9b 50%,
+    #bdbcbf 64%,
+    white 100%
+  );
+  background-image: linear-gradient(
+    180deg,
+    white 0%,
+    #bcbbbe 36%,
+    #9b9b9b 50%,
+    #bdbcbf 64%,
+    white 100%
+  );
+  -webkit-box-shadow: 0 8px 0 #4d4d4d, inset 0 0 5px black,
+    inset 1px 1px 10px white, inset 1px 1px 10px white, inset 1px 1px 10px white,
+    inset 1px 1px 10px white, inset 1px 1px 10px white;
+  box-shadow: 0 8px 0 #4d4d4d, inset 0 0 5px black, inset 1px 1px 10px white,
+    inset 1px 1px 10px white, inset 1px 1px 10px white, inset 1px 1px 10px white,
+    inset 1px 1px 10px white;
+
+  justify-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+a.btn-power-real:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100px;
+  height: 100px;
+
+  content: "";
+
+  opacity: 0.5;
+  border-radius: 50%;
+  background-image: -webkit-linear-gradient(
+    310deg,
+    #9b9b9b 0%,
+    #9b9b9b 0%,
+    #9b9b9b 0%,
+    #9b9b9b 0%,
+    #9b9b9b 0%,
+    white 50%,
+    #bcbbbe 64%,
+    #9b9b9b 100%
+  );
+  background-image: linear-gradient(
+    140deg,
+    #9b9b9b 0%,
+    #9b9b9b 0%,
+    #9b9b9b 0%,
+    #9b9b9b 0%,
+    #9b9b9b 0%,
+    white 50%,
+    #bcbbbe 64%,
+    #9b9b9b 100%
+  );
+}
+
+a.btn-power-real i {
+  position: relative;
+  z-index: 1;
+
+  text-shadow: -1px 1px 0 white;
+}
+
+a.btn-power-real:hover {
+  -webkit-transform: translate(0, 3px);
+  transform: translate(0, 3px);
+
+  color: #f16767;
+  -webkit-box-shadow: 0 5px 0 #4d4d4d, inset 0 0 5px black,
+    inset 1px 1px 10px white, inset 1px 1px 10px white, inset 1px 1px 10px white,
+    inset 1px 1px 10px white, inset 1px 1px 10px white;
+  box-shadow: 0 5px 0 #4d4d4d, inset 0 0 5px black, inset 1px 1px 10px white,
+    inset 1px 1px 10px white, inset 1px 1px 10px white, inset 1px 1px 10px white,
+    inset 1px 1px 10px white;
+}
+
+a.btn-power-real:hover i {
+  text-shadow: 0 0 5px #f16767, 0 0 5px #f16767, 0 0 5px #4dba5e;
+}
+
+.textBox {
+  width: 100%;
+  padding-top: 5px;
+  height: 45px;
+  display: inline-flex;
+  margin-bottom: 3vh;
+}
+
+.textbox input[type="text"] {
+  font-weight: 500;
+  width: 200px;
+  height: 27px;
+  padding-left: 0.5vw;
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  outline: none;
+  border-style: solid;
+  border-color: #E3E7EA;
+  border-width: 0px 0px 2px 0px;
+  font-size: 20px;
+  -webkit-transition: border-color 0.45s linear;
+  transition: border-color 0.45s linear;
+}
+.textbox input[type="text"]:focus{
+  border-color: #f16767;
+}
+.moukotannmen{
+  margin-left: 310px;
+}
+
+.ikimasu{
+  margin-left: 300px;
+}
+
+.ssyasin{
+  display: flex;
+}
+.ssyasins{
+  width: 400px;
+  height: 400px;
+}
+
+.tabs {
+  background-color: #fff;
+  margin: 0 auto;}
+
+/*タブのスタイル*/
+.tab_item {
+  width: 100px;
+  height: 50px;
+  border-bottom: 3px solid #f16767;
+  background-color: #ffffff;
+  line-height: 50px;
+  font-size: 16px;
+  text-align: center;
+  color: #565656;
+  display: block;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+.tab_item:hover {
+  opacity: 0.75;
+}
+
+/*ラジオボタンを全て消す*/
+input[name="tab_item"] {
+  display: none;
+}
+
+/*タブ切り替えの中身のスタイル*/
+.tab_content {
+  display: none;
+  clear: both;
+  overflow: hidden;
+}
+
+
+/*選択されているタブのコンテンツのみを表示*/
+#all:checked ~ #all_content,
+#programming:checked ~ #programming_content,
+#design:checked ~ #design_content {
+  display: block;
+}
+
+/*選択されているタブのスタイルを変える*/
+.tabs input:checked + .tab_item {
+  background-color: #f16767;
+  color: #fff;
+}
+.spost{
+  display: flex;
+  margin: 10px;
+}
+
+.star-ratinge {
+  position: relative;
+  display: inline-block;
+  width: 5em;
+  height: 1em;
+  font-size: 50px;
+}
+.star-rating-fronte {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  color: #ffcc33;
+}
+.star-rating-backe {
+  display: inline-block;
+  color: #ccc;
+}
+.shope{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width:480px){
+  .syasin{
+    margin: 0px 0px 0px 0px;
+    width: 100vw;
+    height: 100vw;
+    object-fit: cover;
+  }
+  .box1 {
+    width: 100vw;
+    height: 100vw;
+  }
+  .box2 {
+    width: 100vw;
+    height: 100vw;
+  }
+  .posts-container{
+    width: 100vw;
+  }
+  .post{
+    width: 100vw;
+  }
+}

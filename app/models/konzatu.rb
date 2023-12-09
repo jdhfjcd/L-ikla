@@ -1,0 +1,2 @@
+class Konzatu < ApplicationRecord
+end

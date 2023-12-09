@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>L-ikla [リクラ] ～お昼どこにする？を快適にするSNS～</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <script src="https://kit.fontawesome.com/e3f82321b6.js" crossorigin="anonymous"></script>
+
+    <%#= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Dela+Gothic+One&family=Mochiy+Pop+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Dela+Gothic+One&family=Mochiy+Pop+One&family=Noto+Sans+JP&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="pasta">
+      <header class="header1">
+        <div class="logooo">
+          <%= link_to image_tag("あおそぼ.png", size:"300x200"), posts_path %>
+        </div>
+        <ul class="lol">
+          <li style="width: 300px"><%= link_to "学食の混雑情報", konzatus_index_path %></li>
+          <li style="width: 300px"><%= link_to "レストラン掲示板", posts_path %></li>
+          <% if user_signed_in? %>
+            <li class="active" style="width: 300px"><%= link_to "マイページへ", user_path(current_user.id) %></li>
+            <li class="active" style="width: 300px"><%= button_to 'ログアウト', destroy_user_session_path, method: :delete, class:"buttonkirai" %></li>
+          <% else %>
+            <li class="active" style="width: 300px"><%= link_to "ログイン", new_user_session_path %></li>
+            <li class="active" style="width: 300px"><%= link_to "新規登録", new_user_registration_path %></li>
+          <% end %>
+        </ul>
+      </header>
+      <header class="header2">
+        <div class="header__inner">
+          <div class="header__title header-title">
+            <%= link_to image_tag("aosoio.png"), posts_path %>
+          </div>
+          <nav class="header__nav nav" id="js-nav">
+            <ul class="nav__items nav-items">
+              <li class="nav-items__item"><%= link_to "学食の混雑情報", konzatus_index_path %></li>
+              <li class="nav-items__item"><%= link_to "レストラン掲示板", posts_path %></li>
+              <% if user_signed_in? %>
+                <li class="nav-items__item"> <%= link_to "マイページへ", user_path(current_user.id) %></li>
+                <li class="nav-items__item"><%= button_to 'ログアウト', destroy_user_session_path, method: :delete, class:"buttonkirai" %></li>
+              <% else %>
+                <li class="nav-items__item"><%= link_to "ログイン", new_user_session_path %></li>
+                <li class="nav-items__item"><%= link_to "新規登録", new_user_registration_path %></li>
+              <% end %>
+            </ul>
+          </nav>
+          <button class="header__hamburger hamburger" id="js-hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+        <script>
+          const ham = document.querySelector('#js-hamburger');
+          const nav = document.querySelector('#js-nav');
+          
+          ham.addEventListener('click', function () {
+          
+            ham.classList.toggle('active');
+            nav.classList.toggle('active');
+          
+          });
+        </script>
+      </header>
+      <main>
+        <div class="loading">
+          <div class="loading-wrap">
+            <i class="fas fa-spinner fa-3x fa-spin"></i>
+          </div>
+        </div>
+        <script>
+          const loading = document.querySelector('.loading');
+          window.addEventListener('load', () => {
+            setTimeout(function() {
+              loading.classList.add('hide');
+            }, 1000);
+          });
+        </script>
+        <%= yield %>
+      </main>
+    </div>
+  </body>
+</html>

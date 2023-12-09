@@ -1,0 +1,365 @@
+// Place all the styles related to the konzatus controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.konzatuuu{
+    display: flex;
+    margin-left: 310px;
+}
+.daimei{
+    font-size: 15pt;
+}
+.suzukasutera{
+    margin: 15px;
+}
+.campus{
+    margin: 5px;
+}
+.univgaku{
+    margin: 5px;
+    margin-bottom: 20px
+}
+.irohasu{
+    margin: 5px;
+    border: solid 1px #c9c9c9;
+    border-radius: 10%;
+}
+.sakaana{
+    display: flex;
+    flex-wrap:wrap;
+}
+.sakaana a{
+    margin: 10px;
+}
+.tomotomo{
+    text-align: center;
+}
+ul.lolol{
+    margin-right: 0px;
+    padding: 0;
+    font: 14px/1.6 'arial narrow', sans-serif;
+    width:200px;
+    list-style: none;
+}
+ul.lolol li{
+    margin: 10px;
+    position: relative;
+    padding: 0.5em 1em 0.5em 2.3em;
+    margin-bottom:5px;
+    color: #f16767;
+    font-size: 15px;
+    font-weight: bold;
+    border-bottom: 1px solid #c9c9c9;
+}
+ul.lolol li:after,
+ul.lolol li:before{
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}
+ul.lolol li:before{
+    left: 0.2em;
+    width: 17px;
+    height: 17px;
+    background: #F16767;
+    top: 50%;
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+ul.lolol li:after{
+    top: 1.1em;
+    left: 0.7em;
+    width: 14px;
+    height: 14px;
+    background: #f167674e;
+}
+.konzatu_form{
+    margin-top: 4%;
+}
+.gakusyokuformmm{
+    text-align: center;
+}
+.menu-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    z-index: 90;
+    background-color: #f16767;
+}
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    position: absolute;
+}
+.menu-btn span:before {
+    bottom: 8px;
+}
+.menu-btn span:after {
+    top: 8px;
+}
+#menu-btn-check:checked ~ .menu-btn span {
+    background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+}
+#menu-btn-check:checked ~ .menu-btn span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+#menu-btn-check:checked ~ .menu-btn span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+#menu-btn-check {
+    display: none;
+}
+.menu-content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 80;
+    background-color: #f16767;
+}
+.menu-content ul {
+    padding: 70px 10px 0;
+}
+.menu-content ul li {
+    border-bottom: solid 1px #000000;
+    list-style: none;
+}
+.menu-content ul li a {
+    display: block;
+    width: 100%;
+    font-size: 15px;
+    box-sizing: border-box;
+    color:#000000;
+    text-decoration: none;
+    padding: 9px 15px 10px 0;
+    position: relative;
+}
+.menu-content ul li a::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-top: solid 2px #ffffff;
+    border-right: solid 2px #ffffff;
+    transform: rotate(45deg);
+    position: absolute;
+    right: 11px;
+    top: 16px;
+}
+.menu-content {
+    width: 17%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 170%;/*leftの値を変更してメニューを画面外へ*/
+    z-index: 80;
+    background-color: #ffe8e8;
+    transition: all 0.5s;/*アニメーション設定*/
+}
+#menu-btn-check:checked ~ .menu-content {
+    left: 83%;/*メニューを画面内へ*/
+}
+
+.ra-mmen{
+    margin-top: 4%;
+    text-align: center;
+}
+
+/*その他と主な共通部分は省略*/
+
+.hayakunetai{
+    position: fixed;
+    right: 10%;
+    bottom: 15%;
+    font-family: 'Darumadrop One', cursive;
+    font-family: 'Dela Gothic One', cursive;
+    font-family: 'Mochiy Pop One', sans-serif;
+}
+
+a.btn--yellow {
+    color: #000000;
+    background-color: #f16767;
+    width: 400px;
+}
+    
+a.btn--yellow:hover {
+    color: #ffffff;
+    background: #f16767;
+}
+    
+a.btn--yellow.btn--cubic {
+    color: #ffffff;
+    border-bottom: 5px solid #5f1e1e;
+}
+    
+a.btn--yellow.btn--cubic:hover {
+    margin-top: 3px;
+    border-bottom: 2px solid #5f1e1e;
+}
+    
+a.btn-c {
+    font-size: 1.8rem;
+    position: relative;
+    padding: 2rem 5rem 2rem 3rem;
+    border-radius: 100vh;
+}
+    
+a.btn-c i.fa {
+    margin-right: 1rem;
+}
+
+a.btn-c:before {
+    font-family: 'Font Awesome 5 Free';
+    font-size: 1.6rem;
+    line-height: 1;
+    position: absolute;
+    top: calc(50% - .8rem);
+    right: 1rem;
+    margin: 0;
+    padding: 0;
+    content: '\f054';
+}
+
+.yabasugiru{
+    font-size: 30px;
+}
+
+.mounetai{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    appearance: none;
+    font-size: 30px;
+    border-bottom: solid 2px;
+    border-color: #f16767;
+}
+
+.daimei a{
+    font-size: 30px;
+    font-family: 'Darumadrop One', cursive;
+    font-family: 'Dela Gothic One', cursive;
+    font-family: 'Mochiy Pop One', sans-serif;
+    color: #F16767;
+}
+.campus p{
+    font-size: 24px;
+    font-family: 'Darumadrop One', cursive;
+    font-family: 'Dela Gothic One', cursive;
+    font-family: 'Mochiy Pop One', sans-serif;
+}
+.sakaana a{
+    font-size: 20px;
+    font-family: 'Darumadrop One', cursive;
+    font-family: 'Dela Gothic One', cursive;
+    font-family: 'Mochiy Pop One', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+.tomotomo a{
+    text-decoration: none;
+    color: #000000;
+}
+
+.ra-mmen p{
+    font-family: 'Darumadrop One', cursive;
+    font-family: 'Dela Gothic One', cursive;
+    font-family: 'Mochiy Pop One', sans-serif;
+    font-size: 30px;
+}
+
+.ra-mmen span{
+    font-family: 'Darumadrop One', cursive;
+    font-family: 'Dela Gothic One', cursive;
+    font-family: 'Mochiy Pop One', sans-serif;
+    font-size: 50px;
+}
+
+.post_formp{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    
+}
+.post_formp input[type='radio']{
+    display: none;
+}
+.post_formp label{
+    position: relative;
+    padding: 10px 10px 0;
+    color: gray;
+    cursor: pointer;
+    font-size: 80px; /*星の大きさを変更するときはここ*/
+}
+.post_formp label .text{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    text-align: center;
+    font-size: 15px; /*星の上の説明書きの大きさを変更するときはここ*/
+    color: gray;
+}
+.post_formp label:hover,
+.post_formp label:hover ~ label,
+.post_formp input[type='radio']:checked ~ label{
+    color: #f16767;
+}
+
+
+.star-ratingp {
+    position: relative;
+    display: inline-block;
+    width: 5em;
+    height: 1em;
+    font-size: 25px;
+}
+.star-ratingp i{
+    font-size: 80px;
+}
+.star-rating-frontp {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #F16767;
+}
+.star-rating-backp {
+    display: inline-block;
+    color: #ccc;
+}
+.gakusyokuformmf {
+    text-align: center;
+}
+
+.yossi img{
+    width: 295px;
+}
+.yossiisland{
+    width: 100%;
+    margin: 0 auto;
+}
+
+@media screen and (max-width:480px) {
+    .yossi img{
+        display: none;
+    }
+}

@@ -1,0 +1,454 @@
+<div class="moukotannmen">
+  <div class="stuff">
+    <%= form_for @post do |f| %>
+
+      <div class="field">
+        <input 
+        class="text" 
+        type="textbox"
+        placeholder="お店の名前"
+        onkeyup="this.setAttribute('value', this.value);"
+        name="post[shop]"
+        id="post_shop"
+        value=""/>
+        <label class="label">お店の名前</label>
+        <label class="error"></label>
+      </div>
+
+      <br>
+
+      <div class="post_form">
+        <%= f.radio_button :hosi, 5 ,id: 'star1'%>
+        <label for="star1"><span class="text">最高</span>★</label>
+
+        <%= f.radio_button :hosi, 4 ,id: 'star2'%>
+        <label for="star2"><span class="text">良い</span>★</label>
+
+        <%= f.radio_button :hosi, 3 ,id: 'star3'%>
+        <label for="star3"><span class="text">普通</span>★</label>
+
+        <%= f.radio_button :hosi, 2 ,id: 'star4'%>
+        <label for="star4"><span class="text">悪い</span>★</label>
+
+        <%= f.radio_button :hosi, 1 ,id: 'star5'%>
+        <label for="star5"><span class="text">最悪</span>★</label>
+      </div>
+
+      <div class="fieldookime">
+        <input 
+        class="text" 
+        type="textbox"
+        placeholder="どこの大学（キャンパス）からいきましたか"
+        onkeyup="this.setAttribute('value', this.value);"
+        name="post[univ]"
+        id="post_univ"
+        value=""/>
+        <label class="label">どこの大学（キャンパス）からいきましたか</label>
+        <label class="error"></label>
+      </div>
+
+      <br>
+
+      <div class="fieldookime">
+        <input 
+        class="text" 
+        type="textbox"
+        placeholder="感想"
+        onkeyup="this.setAttribute('value', this.value);"
+        name="post[about]"
+        id="post_about"
+        value=""/>
+        <label class="label">感想</label>
+        <label class="error"></label>
+      </div>
+
+      <br>
+
+      <div class="field">
+        <%= f.file_field :image %>
+      </div>
+
+      <div id="new-image"></div>  
+
+      <%= f.hidden_field :lat,:value =>"", id: :lat %>
+      <%= f.hidden_field :lng,:value =>"", id: :lng %>
+      
+      <div class="botannorappa">
+        <%= f.submit "投稿する", class: "mouasada" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="mappppp">
+    <div class="kennsakumap">
+      <div class="field">
+        <input 
+        class="text" 
+        type="textbox"
+        placeholder="マップ検索"
+        onkeyup="this.setAttribute('value', this.value);"
+        id="address"
+        value=""/>
+        <label class="label">マップ検索</label>
+        <label class="error"></label>
+        
+      </div>
+      <input type="button" value="検索" onclick="codeAddress()" class=mouasadaaa>
+    </div>
+    <div id='map'></div>
+
+    <style>
+    #map {
+      height: 400px;
+      width: 400px;
+    }
+    </style>
+
+    <script>
+      //初期マップの設定
+      let map
+      let marker
+      function initMap(){
+        geocoder = new google.maps.Geocoder()
+
+        map = new google.maps.Map(document.getElementById('map'), {
+          center:  {lat: 35.6803997, lng:139.7690174},  //東京
+          zoom: 15,
+          
+        });
+      }
+
+      //検索後のマップ作成
+      let geocoder
+      let aft
+      function codeAddress(){
+        let inputAddress = document.getElementById('address').value;
+        geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+          if (status == 'OK') {
+              //マーカーが複数できないようにする
+              if (aft == true){
+                  marker.setMap(null);
+              }
+
+              //新しくマーカーを作成する
+              map.setCenter(results[0].geometry.location);
+                  marker = new google.maps.Marker({
+                  map: map,
+                  position: results[0].geometry.location,
+                  draggable: true	// ドラッグ可能にする
+              });
+
+              //二度目以降か判断
+              aft = true
+
+              //検索した時に緯度経度を入力する
+              document.getElementById('lat').value = results[0].geometry.location.lat();
+              document.getElementById('lng').value = results[0].geometry.location.lng();
+
+              // マーカーのドロップ（ドラッグ終了）時のイベント
+              google.maps.event.addListener( marker, 'dragend', function(ev){
+                  // イベントの引数evの、プロパティ.latLngが緯度経度
+                  document.getElementById('lat').value = ev.latLng.lat();
+                  document.getElementById('lng').value = ev.latLng.lng();
+              });
+          } else {
+            alert('該当する結果がありませんでした：' + status);
+          }
+        });   
+      }
+    </script>
+      
+      
+    <script>
+      import React from 'react';
+      import ReactCrop from 'react-image-crop';
+      import 'react-image-crop/dist/ReactCrop.css';
+      import { Modal, Button } from 'react-bootstrap';
+      import ReactDOM from 'react-dom';
+
+      export default class UserImageInput extends React.Component {
+
+        ...
+
+        render() {
+          const image = this.state.image;
+          const src = this.state.src;
+          const crop = this.state.crop;
+          const show = this.state.show;
+          return (
+            <div className="ml-5">
+              <UserImage image={image} />
+              <label htmlFor="user-image" className="d-block">
+                <input
+                  type="file"
+                  accept="image/jpeg,image/png"
+                  name="user-image"
+                  id="user-image"
+                  onChange={this.onChangeImage}
+                />
+              </label>
+
+              <ModalWindow
+                show={show}
+                setShow={this.setShow}
+                trimming={this.trimming}
+              >
+                <ReactCrop
+                  src={src}
+                  crop={crop}
+                  keepSelection={true}
+                  onChange={(newCrop) => this.setCrop(newCrop)}
+                />
+              </ModalWindow>
+            </div>
+          );
+        }
+      }
+    </script>
+      
+      
+    <script>
+      export default class UserImageInput extends React.Component {
+
+        ...
+
+        trimming() {
+          this.setShow(false);
+          const crop = this.state.crop;
+          const image = this.resizedImage;
+
+          const canvas = document.createElement('canvas');
+          const scaleX = image.naturalWidth / image.width;
+          const scaleY = image.naturalHeight / image.height;
+          canvas.width = crop.width;
+          canvas.height = crop.height;
+          const ctx = canvas.getContext('2d');
+
+          ctx.drawImage(
+            image,
+            crop.x * scaleX,
+            crop.y * scaleY,
+            crop.width * scaleX,
+            crop.height * scaleY,
+            0,
+            0,
+            crop.width,
+            crop.height
+          );
+
+          const contentType = image.src.split(';')[0].split(':')[1];
+          const trimmedSrc = canvas.toDataURL(contentType);
+
+          // TODO: 閉じるときに、アニメーションになるときとならないときがある。bootstrap側の問題？
+          this.setShow(false);
+          this.setImage(trimmedSrc);
+        }
+      }
+        ...
+    </script>
+        
+        
+    <script>
+      function ModalWindow(props) {
+        const show = props.show;
+        const setShow = props.setShow;
+      
+        const handleClose = () => setShow(false);
+        const trimming = props.trimming;
+      
+        return (
+          <>
+            <Modal
+              show={show}
+              onHide={handleClose}
+              backdrop="static"
+              keyboard={false}
+              size="lg"
+              aria-labelledby="contained-modal-title-vcenter"
+              centered
+            >
+              <Modal.Header closeButton>
+                <Modal.Title>画像のトリミング</Modal.Title>
+              </Modal.Header>
+              <Modal.Body className="text-center">{props.children}</Modal.Body>
+              <Modal.Footer>
+                <Button variant="secondary" onClick={handleClose}>
+                  キャンセルする
+                </Button>
+                <Button variant="primary" onClick={trimming}>
+                  OK
+                </Button>
+              </Modal.Footer>
+            </Modal>
+          </>
+        );
+      }
+    </script>
+        
+        
+    <script>
+      export default class UserImageInput extends React.Component {
+        constructor(props) {
+          super(props);
+
+          this.state = {
+            src: null,
+            show: false,
+            crop: {
+              aspect: 1,
+              unit: '%',
+            },
+            image: this.props.image ?? null,
+          };
+
+          this.onChangeImage = this.onChangeImage.bind(this);
+          this.setCrop = this.setCrop.bind(this);
+          this.setShow = this.setShow.bind(this);
+          this.readImage = this.readImage.bind(this);
+          this.resize = this.resize.bind(this);
+          this.trimming = this.trimming.bind(this);
+        }
+      }
+        ...
+    </script>
+        
+        
+    <script>
+      export default class UserImageInput extends React.Component {
+
+        ...
+      
+        onChangeImage(e) {
+          const reader = new FileReader();
+          const file = e.target.files[0];
+      
+          // 値を初期化しないと、
+          // もう一回画像をしようとしてキャンセルするとonChangeが発火するけど画像は無い、っていう状態になる。
+          e.target.value = null;
+      
+          reader.readAsDataURL(file);
+      
+          reader.onload = () => {
+            this.readImage(reader.result);
+          };
+        }
+
+        resize(image) {
+          // 幅の指定、ここを最適化する必要あり。
+          const modalWidth = 500;
+
+          if (image.width > modalWidth) {
+            const scale = modalWidth / image.width;
+            image.width = modalWidth;
+            image.height = image.height * scale;
+          }
+
+          this.resizedImage = image;
+
+          return image;
+        }
+
+        readImage(src) {
+          const image = new Image();
+          image.src = src;
+          image.onload = () => {
+            const aspect = image.height / image.width;
+            const crop = this.state.crop;
+
+            if (aspect > 1) {
+              crop.width = 100;
+            } else {
+              crop.height = 100;
+            }
+
+            // Canvasを利用して、リサイズしたImageをBase64形式にする。
+            const resizedImage = this.resize(image);
+
+            const canvas = document.createElement('canvas');
+            canvas.width = this.resizedImage.width;
+            canvas.height = this.resizedImage.height;
+
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(
+              resizedImage,
+              0,
+              0,
+              resizedImage.width,
+              resizedImage.height
+            );
+
+            // src -> data:image/jpeg;base64........
+            const contentType = src.split(';')[0].split(':')[1];
+            const resizedSrc = canvas.toDataURL(contentType);
+            // ctx.clearRect(0, 0, resizedImage.width, resizedImage.height);
+
+            this.setState({
+              src: resizedSrc,
+              crop: crop,
+              show: true,
+            });
+          };
+        }
+      }
+      ...
+    </script>
+        
+        
+    <script>  
+      function UserImage(props) {
+        if (props.image) {
+          return (
+            <img
+              className="img-fluid"
+              src={props.image}
+              alt="user-image"/>
+          );
+        } else {
+          return (
+            <img
+              className="img-fluid"
+              src="/img/icon.svg"
+              alt="user-image"/>
+          );
+        }
+      }
+        
+      export default class UserImageInput extends React.Component {
+
+        ...
+      
+        setShow(isShown) {
+          this.setState({
+            show: isShown,
+          });
+      
+          // 閉じるときは初期化する。
+          if (!isShown) {
+            const crop = {
+              aspect: 1,
+              unit: '%',
+            };
+      
+            this.setCrop(crop);
+          }
+        }
+      
+        setImage(image) {
+          this.setState({
+            image: image,
+          });
+        }
+      
+        setCrop(newCrop) {
+          this.setState({
+            crop: newCrop,
+          });
+        }
+        
+        ...
+      }    
+        
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlKUNlVn5VNHL_TmqpM1yeC3GadIGLU5g&callback=initMap" async defer></script>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="ra-mmen">
+    <p> 法政大学 多摩キャンパス <br> 経済学部食堂 </p>
+    <br>
+    <p>待ち時間</p>
+    <div class="yossiisland">
+        <br>
+        <h1>
+            <span class="star-ratingp">
+                <span class="star-rating-frontp" style="width: <%= getPercentage(@konzatu) %>%;"><i class="fa-solid fa-person"></i><i class="fa-solid fa-person"></i><i class="fa-solid fa-person"></i><i class="fa-solid fa-person"></i><i class="fa-solid fa-person"></i></span>
+                <span class="star-rating-backp"><i class="fa-solid fa-person"></i><i class="fa-solid fa-person"></i><i class="fa-solid fa-person"></i><i class="fa-solid fa-person"></i><i class="fa-solid fa-person"></i></span>
+            </span> 
+        </h1>
+        <br>
+        <div class="yossi">
+            <h1><%= @konzatu %>分</h1>
+        </div>
+    </div>
+</div>
+
+<div class="hayakunetai">
+    <a href="/konzatus/new/htamakeizai" class="btn btn-c btn--yellow btn--cubic">
+        <i class="fa-solid fa-user-group"></i>&emsp;待ち時間を投稿
+    </a>
+</div>

@@ -1,0 +1,167 @@
+<div class="posts-container">
+  <div class="field-search">
+    <%= form_tag({controller:"posts",action:"index"}, method: :get) do %>
+      <%= text_field_tag :search %>
+      <%= submit_tag '検索'  %>
+    <% end %>
+  </div>
+
+  <% @posts.each do |t| %>
+    <div class="post">
+      <div class="ue">
+        <div class="user">
+          <% if user_signed_in? %>
+            <%= link_to user_path(t.user.id) do %>  
+              <%= image_tag t.user.image_url, :style => "border-radius:50%", size: "40x40" if t.user.image? %>
+            <% end %>
+          <% else %>
+            <%= link_to new_user_session_path do %>
+              <%= image_tag t.user.image_url, :style => "border-radius:50%", size: "40x40" if t.user.image? %>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="username">
+          <% if user_signed_in? %>
+            <%= link_to t.user.name, user_path(t.user.id) %>
+          <% else %>
+            <%= link_to t.user.name, new_user_session_path %>
+          <% end %>
+        </div>
+        <div class="follow">
+          <% if user_signed_in? && current_user.id == t.user_id then %>
+            <%= link_to edit_post_path(t.id), class:"btn--orange" do %>
+              <i class="fa-solid fa-pen"></i>
+            <% end %>
+            &emsp;
+            <%= button_to post_path(t.id), class:"btn--orange", method: :delete do %>
+              <i class="fa-solid fa-trash"></i>
+            <% end %>
+          <% elsif user_signed_in? && current_user.id != t.user_id %>
+            <!-- 将来的にフォローのレンダーコード入れる！ -->
+          <% end %>
+        </div>
+      </div>
+
+      <div class="box1">
+        <%= image_tag t.image_url,class:"syasin" if t.image? %>
+      </div>
+      <div class="map"></div>
+      <style>
+        .map {
+          height: 400px;
+          width: 400px;
+          @media screen and (max-width:480px){
+            width:100vw;
+            height:100vw;
+          }
+        }
+      </style>
+      <script>
+          function initMap(){
+            geocoder = new google.maps.Geocoder()
+          
+            map = new google.maps.Map(document.querySelector('.map'), {
+              center:  {lat: <%= t.lat %>, lng: <%= t.lng %>},
+              zoom: 15,
+            });
+          
+            marker = new google.maps.Marker({
+              position:  {lat: <%= t.lat %>, lng: <%= t.lng %>},
+              map: map
+            });
+          }
+      </script>
+      
+      <div class="iinehens">
+        <button class="swbutton"><i class="fa-solid fa-rotate"></i></button>
+        <div class="iine">
+          <% if user_signed_in? %>
+            <% if current_user.already_liked?(t) %>
+              <%= button_to post_like_path(id: t.id, post_id: t.id), class:"iiiine", method: :delete do %>
+                <i class="fa-solid fa-paperclip"></i>
+              <% end %>
+            <% else %>
+              <%= button_to post_likes_path(id: t.id, post_id: t.id), class:"iiiiine", method: :post do %>
+                <i class="fa-solid fa-paperclip"></i>
+              <% end %>
+            <% end %>
+          <% else %>
+            <a href="/users/sign_in">
+              <i class="fa-solid fa-paperclip"></i>
+            </a>
+          <% end %>
+        </div>
+        <div class="komennt">
+          <% if user_signed_in? %>
+            <%= link_to post_path(t.id) do %> 
+              <i class="fa-regular fa-comments"></i>
+            <% end %>
+          <% else %>
+            <%= link_to new_user_session_path do %>
+              <i class="fa-regular fa-comments"></i>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="omuomu">  
+        <div class="shoooop">      
+          <%= t.shop %>
+        </div>
+        <h2>
+          <span class="star-rating">
+            <span class="star-rating-front" style="width: <%= getPercent(t.hosi) %>%;">★★★★★</span>
+            <span class="star-rating-back">★★★★★</span>
+          </span>  
+        </h2>
+        <div class="univ">
+          <%= t.univ %><br>
+        </div>
+        <div class="aboout">
+          <div class="PlagOpen1">
+            <p>
+              <%= t.about.truncate(10, omission: '') %>
+            </p>
+          </div>
+          <div class="PlagClose1" style="display: none">
+            <p>
+              <%= t.about %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="sinki">
+  <a href="/posts/new" class="btn btn-power">
+    <i class="fa-sharp fa-solid fa-plus"></i>
+  </a>
+</div>
+
+<script>
+  var map
+  var marker
+  var switchBtn = document.querySelector('.swbutton');
+  var box1 = document.querySelector('.box1');
+  var box2 = document.querySelector('.map');
+  var changeElement = () => {
+    if(box1.style.display==''){
+      box1.style.display='none';
+    }else{
+      box1.style.display='';
+    }
+    if(box2.style.display==''){
+      box2.style.display='none';
+    }else{
+      box2.style.display='';
+    }
+  }
+  var changeElement2 = () => {
+    box2.style.display='none';
+  }
+  switchBtn.addEventListener('click', changeElement);
+  window.addEventListener('load', changeElement2);
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlKUNlVn5VNHL_TmqpM1yeC3GadIGLU5g&callback=initMap" async defer></script>

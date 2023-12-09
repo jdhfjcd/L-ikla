@@ -1,0 +1,135 @@
+<div class="ikimasu">
+  <div class="spost">
+    <div class="divoosugi">
+      <div class="ue">
+        <div class="user">
+          <%= image_tag @post.user.image_url, :style => "border-radius:50%", size: "40x40" if @post.user.image? %>
+        </div>   
+        <div class="username">
+          <% if user_signed_in? %>
+            <%= link_to @post.user.name, user_path(@post.user.id) %>  
+          <% else %>
+            <%= link_to @post.user.name, new_user_session_path %>
+          <% end %>
+        </div>
+        <div class="follow">
+          <% if user_signed_in? && current_user.id == @post.user_id then %>
+            <%= link_to edit_post_path(@post.id), class:"btn--orange" do %>
+              <i class="fa-solid fa-pen"></i>
+            <% end %>
+            &emsp;
+            <%= button_to post_path(@post.id), class:"btn--orange", method: :delete do %>
+              <i class="fa-solid fa-trash"></i>
+            <% end %>
+          <% elsif user_signed_in? && current_user.id != @post.user_id %>
+            <!-- 将来的にフォローのレンダーコード入れる！ -->
+          <% end %>
+        </div>
+      </div>
+      <div class="omuomus">     
+        <h2>
+          <span class="star-ratinge">
+            <span class="star-rating-fronte" style="width: <%= getPercent(@post.hosi) %>%;">★★★★★</span>
+            <span class="star-rating-backe">★★★★★</span>
+          </span>  
+        </h2>
+        <div class="shope">
+          <h2>店名：<%= @post.shop %></h2>
+        </div>
+        <h2>学校：<%= @post.univ %></h2><br>
+        <h2>レビュー：<%= @post.about %></h2>
+      </div>
+    </div>
+    <div class="tabs">
+      <input id="all" type="radio" name="tab_item" checked>
+      <label class="tab_item" for="all">Photo</label>
+      <input id="programming" type="radio" name="tab_item">
+      <label class="tab_item" for="programming">Map</label>
+      <input id="design" type="radio" name="tab_item">
+      <label class="tab_item" for="design">コメント</label>
+      <div class="tab_content" id="all_content">
+        <div class="tab_content_description">
+          <p class="c-txtsp">
+            <%= image_tag @post.image_url,class:"syasin" if @post.image? %>
+          </p>
+        </div>
+      </div>
+      <div class="tab_content" id="programming_content">
+        <div class="tab_content_description">
+          <p class="c-txtsp">
+            <div id='map'></div>
+            <style>
+            #map {
+              height: 400px;
+              width: 400px;
+            }
+            </style>
+            
+            <!-- js部分 -->
+            <script>
+            //初期マップの設定
+            let map
+            let marker
+            function initMap(){
+              geocoder = new google.maps.Geocoder()
+            
+              map = new google.maps.Map(document.getElementById('map'), {
+                center:  {lat: <%= @post.lat %>, lng: <%= @post.lng %>},
+                zoom: 15,
+              });
+            
+                marker = new google.maps.Marker({
+                position:  {lat: <%= @post.lat %>, lng: <%= @post.lng %>},
+                map: map
+              });
+            }
+            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlKUNlVn5VNHL_TmqpM1yeC3GadIGLU5g&callback=initMap" async defer></script>
+          </p>
+        </div>
+        </div>
+          <div class="tab_content" id="design_content">
+            <div class="tab_content_description">
+              <p class="c-txtsp">
+                <% if user_signed_in? %>
+                  <%= form_with(model: [@post, @comment], local: true) do |f| %>
+                    <%= f.text_area :content %>
+                    <%= button_tag type: "submit" do %>
+                      <i class="far fa-comments"></i> コメントする
+                    <% end %>
+                  <% end %>
+                <% end %>
+                <% @comments.each do |c| %>
+                  <div>
+                    <%= link_to c.user.name, user_path(c.user.id) %>  
+                    <%= c.content %>
+                  </div>
+                <% end %>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="migigawa">
+    <div class="iine">
+      <% if user_signed_in? %>
+        <% if current_user.already_liked?(@post) %>
+          <%= button_to post_like_path(id: @post.id, post_id: @post.id), class:"iiiine", method: :delete do %>
+            <i class="fas fa-heart"></i><%= @post.likes.count %>
+          <% end %>
+        <% else %>
+          <%= button_to post_likes_path(id: @post.id, post_id: @post.id), class:"iiiiine", method: :post do %>
+            <i class="far fa-heart"></i><%= @post.likes.count %>
+          <% end %>
+        <% end %>
+      <% else %>
+        <a href="/users/sign_in">
+          <i class="far fa-heart"></i><%= @post.likes.count %>
+        </a>
+      <% end %>
+    </div>
+  </div>
+</div>

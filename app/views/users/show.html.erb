@@ -1,0 +1,101 @@
+<h1>マイページ</h1>
+<%= link_to "投稿一覧に戻る", root_path %>
+
+<%= image_tag @user.image_url, size: "40x40" if @user.image? %>
+<p>ユーザー名 : <%= @user.name %></p>
+<p>プロフィール : <%= @user.profile %></p>
+
+<% if current_user.id == @user.id %>
+  <%= link_to "プロフィールを編集する", edit_user_registration_path %>
+<% else %>
+
+<% end %>
+
+<h2>フォロー数：<%= @user.followings.count %></h2>
+  <% @user.followings.each do |u| %>
+    <p><a href="/users/<%= u.id %>"><%= u.name %>さん</a></p>
+<% end %>
+<h2>フォロワー数：<%= @user.followers.count %></h2>
+  <% @user.followers.each do |u| %>
+    <p><a href="/users/<%= u.id %>"><%= u.name %>さん</a></p>
+<% end %>
+
+<h2>ユーザーの投稿一覧</h2>
+<% @user.posts.order(created_at: :desc).each do |t| %>
+  <div class="post">
+    <%= t.user.name %>
+    <%= t.shop %>
+    <div>
+      <h2>評価：
+        <span class="star-rating">
+          <span class="star-rating-front" style="width: <%= getPercent(t.hosi) %>%;">★★★★★</span>
+          <span class="star-rating-back">★★★★★</span>
+        </span> 
+      </h2>
+    </div>
+    <%= t.genre %>
+    <%= t.price %>
+    <%= t.univ %>
+    <%= t.mtizikan %>
+    <%= t.about %>
+    <%= image_tag t.image_url, size: "250x200" if t.image? %>
+
+    <% if user_signed_in? %>
+      <% if current_user.already_liked?(t) %>
+        <%= button_to post_like_path(id: t.id, post_id: t.id), method: :delete do %>
+            <i class="fas fa-heart"></i><%= t.likes.count %>
+        <% end %>
+      <% else %>
+        <%= button_to post_likes_path(id: t.id, post_id: t.id), method: :post do %>
+            <i class="far fa-heart"></i><%= t.likes.count %>
+        <% end %>
+      <% end %>
+    <% else %>
+          <i class="far fa-heart"></i><%= t.likes.count %>
+    <% end %>
+  
+    <%= link_to "詳細へ", post_path(t.id) %>
+    <% if user_signed_in? && current_user.id == t.user_id %>
+      <%= link_to "編集する", edit_post_path(t.id) %>
+      <%= button_to "削除する", post_path(t.id), method: :delete %>
+    <% end %> 
+  </div>
+<% end %>
+
+<h2>ユーザーがいいねした投稿一覧</h2>
+<% @user.liked_posts.order(created_at: :desc).each do |t| %>
+  <div class="post">
+    <%= t.user.name %>
+    <%= t.shop %>
+    <div>
+    <h2>
+      <span class="star-rating">
+      <span class="star-rating-front" style="width: <%= getPercent(t.hosi) %>%;">★★★★★</span>
+      <span class="star-rating-back">★★★★★</span>
+      </span> 
+    </h2>
+    </div>
+    <%= t.genre %>
+    <%= t.price %>
+    <%= t.univ %>
+    <%= t.mtizikan %>
+    <%= t.about %>
+    <%= image_tag t.image_url, size: "250x200" if t.image? %>
+
+    <% if user_signed_in? %>
+      <% if current_user.already_liked?(t) %>
+        <%= button_to post_like_path(id: t.id, post_id: t.id), method: :delete do %>
+          <i class="fas fa-heart"></i><%= t.likes.count %>
+        <% end %>
+      <% else %>
+        <%= button_to post_likes_path(id: t.id, post_id: t.id), method: :post do %>
+          <i class="far fa-heart"></i><%= t.likes.count %>
+        <% end %>
+      <% end %>
+    <% else %>
+      <i class="far fa-heart"></i><%= t.likes.count %>
+    <% end %>
+  </div>
+  <%= link_to "詳細へ", post_path(t.id) %>
+<% end %>
+
