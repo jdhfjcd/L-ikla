@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :users, only: [:index, :show, :new]
   root 'konzatus#index'
 
   get 'konzatus' => 'konzatus#index'
@@ -48,6 +47,9 @@ Rails.application.routes.draw do
   get 'konzatus/rniizakokage' => 'konzatus#rniizakokage'
   get 'konzatus/rniizahararu' => 'konzatus#rniizahararu'
 
+  get 'posts/detail' => 'posts#detail'
+
+  resources :users, only: [:index, :show, :new]
   resources :posts do
     resources :likes, only: [:create, :destroy]
     resources :comments, only: [:create]

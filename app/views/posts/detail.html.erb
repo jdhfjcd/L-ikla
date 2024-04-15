@@ -1,0 +1,26 @@
+<div class="map"></div>
+<style>
+    .map {
+        height: 400px;
+        width: 400px;
+            @media screen and (max-width:480px){
+            width:100vw;
+            height:100vw;
+    }
+    }
+</style>
+<script>
+    function initMap(){
+        geocoder = new google.maps.Geocoder()
+        map = new google.maps.Map(document.querySelector('.map'), {
+            center:  {lat: <%= @post.lat %>, lng: <%= @post.lng %>},
+            zoom: 15,
+        });
+
+        marker = new google.maps.Marker({
+            position:  {lat: <%= @post.lat %>, lng: <%= @post.lng %>},
+            map: map
+        });
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlKUNlVn5VNHL_TmqpM1yeC3GadIGLU5g&callback=initMap" async defer></script>

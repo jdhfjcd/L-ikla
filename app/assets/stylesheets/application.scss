@@ -189,6 +189,9 @@ ul.lol li:hover {
   margin: auto;
   height: 20px;
 }
+.loading-wrap i{
+  color: #f16767;
+}
 
 @media screen and (max-width:480px) {
   .header1{
@@ -204,11 +207,11 @@ ul.lol li:hover {
     right: 0;
     z-index: 999; 
     background-color: #ffffff; 
+    border-bottom: solid 2px;
+    border-color: #000000;
   }
   .header2 img{
-    width: 43vw;
-    margin-top: 8px;
-    max-height: 66px;
+    margin-left: 8px;
   }
   .pasta{
     display: block;
@@ -249,9 +252,16 @@ ul.lol li:hover {
     width: 100%;
     display: block;
     text-align: center;
-    font-size: 20px;
+    font-size: 17px;
     margin-bottom: 24px;
     text-decoration: none;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+  .nav-items__item input{
+    border: none;
+    background-color: transparent;
+    font-size: 17px;
+    font-family: 'Noto Sans JP', sans-serif;
   }
   .nav-items__item:last-child a {
     margin-bottom: 0;
@@ -259,7 +269,7 @@ ul.lol li:hover {
   .header__hamburger {
     width: 48px;
     height: 100%;
-    margin-right: 6px;
+    margin-right: 11px;
   }
   .hamburger {
     background-color: transparent;
@@ -269,6 +279,7 @@ ul.lol li:hover {
   .hamburger span {
     width: 100%;
     height: 1px;
+    border: solid 2px;
     background-color: #000;
     position: relative;
     transition: ease .4s;
@@ -278,7 +289,7 @@ ul.lol li:hover {
     top: 0;
   }
   .hamburger span:nth-child(2) {
-    margin: 8px 0;
+    margin: 5px 0;
   }
   .hamburger span:nth-child(3) {
     top: 0;

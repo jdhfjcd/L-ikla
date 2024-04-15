@@ -26,6 +26,10 @@ class PostsController < ApplicationController
     @comments = @post.comments
     @comment = Comment.new
   end
+
+  def detail
+    @post = Post.find(params[:id])
+  end
   
   def edit
     @post = Post.find(params[:id])
@@ -51,3 +55,4 @@ class PostsController < ApplicationController
     params.require(:post).permit(:shop, :genre, :univ, :mtizikan, :about, :price, :image, :hosi, :lat, :lng)
   end 
 end
+

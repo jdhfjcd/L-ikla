@@ -2,7 +2,7 @@
   <div class="field-search">
     <%= form_tag({controller:"posts",action:"index"}, method: :get) do %>
       <%= text_field_tag :search %>
-      <%= submit_tag '検索'  %>
+      <%= submit_tag '検索' %>
     <% end %>
   </div>
 
@@ -45,35 +45,8 @@
       <div class="box1">
         <%= image_tag t.image_url,class:"syasin" if t.image? %>
       </div>
-      <div class="map"></div>
-      <style>
-        .map {
-          height: 400px;
-          width: 400px;
-          @media screen and (max-width:480px){
-            width:100vw;
-            height:100vw;
-          }
-        }
-      </style>
-      <script>
-          function initMap(){
-            geocoder = new google.maps.Geocoder()
-          
-            map = new google.maps.Map(document.querySelector('.map'), {
-              center:  {lat: <%= t.lat %>, lng: <%= t.lng %>},
-              zoom: 15,
-            });
-          
-            marker = new google.maps.Marker({
-              position:  {lat: <%= t.lat %>, lng: <%= t.lng %>},
-              map: map
-            });
-          }
-      </script>
-      
+
       <div class="iinehens">
-        <button class="swbutton"><i class="fa-solid fa-rotate"></i></button>
         <div class="iine">
           <% if user_signed_in? %>
             <% if current_user.already_liked?(t) %>
@@ -139,29 +112,3 @@
     <i class="fa-sharp fa-solid fa-plus"></i>
   </a>
 </div>
-
-<script>
-  var map
-  var marker
-  var switchBtn = document.querySelector('.swbutton');
-  var box1 = document.querySelector('.box1');
-  var box2 = document.querySelector('.map');
-  var changeElement = () => {
-    if(box1.style.display==''){
-      box1.style.display='none';
-    }else{
-      box1.style.display='';
-    }
-    if(box2.style.display==''){
-      box2.style.display='none';
-    }else{
-      box2.style.display='';
-    }
-  }
-  var changeElement2 = () => {
-    box2.style.display='none';
-  }
-  switchBtn.addEventListener('click', changeElement);
-  window.addEventListener('load', changeElement2);
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlKUNlVn5VNHL_TmqpM1yeC3GadIGLU5g&callback=initMap" async defer></script>

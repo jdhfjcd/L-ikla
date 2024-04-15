@@ -350,16 +350,34 @@ a.btn-c:before {
     text-align: center;
 }
 
-.yossi img{
-    width: 295px;
-}
-.yossiisland{
-    width: 100%;
-    margin: 0 auto;
-}
-
 @media screen and (max-width:480px) {
-    .yossi img{
-        display: none;
+    .konzatuuu{
+        margin: 0;
+    }
+    .suzukasutera{
+        margin: 0;
+    }
+    .tomotomo{
+        margin-top: 8px;
+        display: flex;
+        justify-content: center;
+    }
+    .tomotomo a{
+        font-size: 15px;
+    }
+    .daimei{
+        text-align: center;
+    }
+    .daimei a{
+        font-size: 20px;
+    }
+    .campus{
+        text-align: center;
+    }
+    .campus p{
+        font-size: 18px;
+    }
+    .irohasu{
+        border-radius: 50%;
     }
 }

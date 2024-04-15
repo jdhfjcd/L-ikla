@@ -32,9 +32,6 @@ html {
   margin: 0 auto;
   margin-bottom: 10px;
   box-sizing: content-box;
-  font-family: 'Darumadrop One', cursive;
-  font-family: 'Dela Gothic One', cursive;
-  font-family: 'Mochiy Pop One', sans-serif;
   font-family: 'Noto Sans JP', sans-serif;
 }
 .field-search{
@@ -50,9 +47,6 @@ html {
   width: 300px;
   overflow: hidden;
   background-color: #fff;
-  font-family: 'Darumadrop One', cursive;
-  font-family: 'Dela Gothic One', cursive;
-  font-family: 'Mochiy Pop One', sans-serif;
   font-family: 'Noto Sans JP', sans-serif;
 }
 .field-search input[type="text"]{
@@ -60,9 +54,6 @@ html {
   height: 2.0em;
   width: 100%;
   vertical-align: middle;
-  font-family: 'Darumadrop One', cursive;
-  font-family: 'Dela Gothic One', cursive;
-  font-family: 'Mochiy Pop One', sans-serif;
   font-family: 'Noto Sans JP', sans-serif;
 }
 .field-search input[type="text"]:focus {
@@ -80,9 +71,6 @@ html {
   right:0px;
   top: -3px;
   outline : none;
-  font-family: 'Darumadrop One', cursive;
-  font-family: 'Dela Gothic One', cursive;
-  font-family: 'Mochiy Pop One', sans-serif;
   font-family: 'Noto Sans JP', sans-serif;
 }
 .ue{
@@ -114,7 +102,7 @@ html {
 }
 
 .follow i{
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .syasin{
@@ -512,5 +500,35 @@ input[name="tab_item"] {
   }
   .post{
     width: 100vw;
+  }
+  a.btn-power {
+    font-size: 25px;
+  
+    display: grid;
+  
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    padding: 0;
+  
+    text-align: center;
+    letter-spacing: 0;
+  
+    color: #c9b1b1;
+    border-radius: 50%;
+    border: solid 1px;
+    border-color: #44444410;
+    background: #fdfdfd;
+    -webkit-box-shadow: 0 8px 0 #c9b1b1;
+    box-shadow: 0 4px 0 #c9b1b1;
+  
+    justify-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  
+    position: fixed;
+    right: 13%;
+    bottom: 15%;
   }
 }
