@@ -56,3 +56,7 @@ class PostsController < ApplicationController
   end 
 end
 
+def unti
+  @unti = Unti.find(1,2,3,4)
+  @unit = Unti.find(5,6,7,8)
+end
